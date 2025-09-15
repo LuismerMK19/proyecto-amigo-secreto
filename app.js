@@ -24,11 +24,43 @@ function agregarAmigo(){
 
         //Limpiar input
         limpiarInput("amigo");
+
         return ;
     }
     
 }
 
+// Funcion de Sorteo
+function sortearAmigo(){
+    //Verifica que existan nombres en la lista
+    if(arrayAmigos.length !== 0){
+        let amigoSorteado = document.getElementById("resultado");
+
+        //Genere el numero aleatorio para el indice del array con los nombres.
+        let indice = Math.floor(Math.random()*arrayAmigos.length);
+
+        // Ingresa el nombre del amigo secreto.
+        amigoSorteado.innerHTML = "El amigo secreto sorteado es:" + arrayAmigos[indice];
+
+        //Limpia lista del amigos al realizar el sorteo.
+        limpiarList("listaAmigos");
+
+        //Limpiar Array
+        limpiarArray(arrayAmigos);
+    }
+    return;
+}
+
+
+
 function limpiarInput(id){
     document.getElementById(id).value = "";
+}
+
+function limpiarList(id){
+    document.getElementById(id).innerHTML = "";
+}
+
+function limpiarArray(array) {
+  array.length = 0;
 }
