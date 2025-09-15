@@ -22,7 +22,13 @@ function agregarAmigo(){
         //Agrega el nombre validado al array.
         arrayAmigos.push(nombreIngresado);
 
+        //Limpiar input
+        limpiarInput("amigo");
         return ;
     }
     
+}
+
+function limpiarInput(id){
+    document.getElementById(id).value = "";
 }
